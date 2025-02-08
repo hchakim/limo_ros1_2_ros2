@@ -12,11 +12,13 @@
 
 ### Jetson Nano Ubuntu 20.04 설치
 Jetson Nano는 Ubuntu 18.04까지만 지원을 하지만, 비공식 적으로 Ubuntu 20.04를 설치 할 수 있도록 이미지가 있습니다. 다음 링크를 참고하여 SD 카드에 Jetson Nano용 SD 카드에 설치해 주시기 바라겠습니다.
+<<굽기에서 Balana Etcher는 매번 실패, 라즈베리파이용 imager로 굽기 성공>>
 
     https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image
 
 ### ROS2 Foxy 설치
-Ubuntu 20.04를 설치해 주신 후 ROS2 Foxy 버전을 Ubuntu(Debian)으로 설치해 주시면 되시겠습니다. 관련하여 자세한 설치 방법은 다음 링크를 참고해 주시면 감사하겠습니다.
+Ubuntu 20.04를 설치해 주신 후 ROS2 Foxy 버전을 Ubuntu(Debian)으로 설치 관련하여 자세한 설치 방법은 다음 링크를 참고해 주시면 감사하겠습니다.
+<<Full Desktop과 Devleopment Kit 까지 설치>>
 
     https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html
 
@@ -87,6 +89,7 @@ Limo, Lidar, camera 를 ros2로 제어하고 sensor data를 확인하는 방벙�
 * /limo_status: Limo의 배터리 상태, 모드, 모터 RPM 등을 나타내는 topic입니다.
 
 Limo는 다음과 같이 제어 할 수 있습니다. (직진속도 0.3 회전 속도 0.3)으로 Limo 제어
+<<작성 양식에 유의>>
 ```
     $ ros2 topic pub -r 10 /cmd_vel geometry_msgs/msg/Twist "linear:
         x: 0.3
@@ -110,6 +113,7 @@ Limo는 다음과 같이 제어 할 수 있습니다. (직진속도 0.3 회전 �
 * /scan: Lidar 센서 데이터
 
 Lidar 토픽은 rviz2를 활용하여 확인 할 수 있습니다.
+<< rviz2 ~/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/config/ydladar.rviz >>
 ![Screenshot from 2024-05-08 18-32-30](https://github.com/WeGo-Robotics/upgrade_limo/assets/150217205/75946c6e-d514-4816-9204-dddc9c6e216f)
 
 3. Camera ROS2
@@ -124,4 +128,5 @@ Lidar 토픽은 rviz2를 활용하여 확인 할 수 있습니다.
 * /image: camera 센서 데이터
 
 Camera data는 rqt_image_view를 통해서 확인 가능합니다.
+<<rqt 실행 후 viewer에서 찾아 봄>>
 ![Screenshot from 2024-05-08 18-37-38](https://github.com/WeGo-Robotics/upgrade_limo/assets/150217205/c7d6f124-2b3d-4921-bc2b-bbc8974f4733)
